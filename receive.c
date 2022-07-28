@@ -33,7 +33,7 @@ int main() {
         rx_cfg.enable_address_filtering = filtering_off;
         rx_cfg.enable_crc = OPTION_ON;
 
-        rx_cfg.sync_length = 1;
+        rx_cfg.sync_length = 0x3;
         rx_cfg.fixed_message_length = 5;
         rx_cfg.bytes_to_drop = 0;
 

@@ -29,8 +29,8 @@ int main() {
 	tx_cfg.enable_address_byte = OPTION_OFF;
 	tx_cfg.enable_crc = OPTION_ON;
 
-	tx_cfg.preamble_length = 1;
-	tx_cfg.sync_length = 1;
+	tx_cfg.preamble_length = 0x3;
+	tx_cfg.sync_length = 0x3;
 	tx_cfg.fixed_message_length = 5;
 
 	tx_cfg.sync_pattern[0] = 0x1;
@@ -46,7 +46,7 @@ int main() {
 	}
 
 	/* ret = read(fd, c, 100); */
-	ret = write(fd, "abcdeasdfsadfasdf", 5);
+	ret = write(fd, "abcde", 5);
 
 	if (ret < 0) {
 		printf("read failed");
