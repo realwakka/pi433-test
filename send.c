@@ -30,12 +30,13 @@ int main() {
 	tx_cfg.enable_crc = OPTION_ON;
 
 	tx_cfg.preamble_length = 0x3;
-	tx_cfg.sync_length = 0x1;
+	tx_cfg.sync_length = 0x3;
 	tx_cfg.fixed_message_length = 0;
 
 	tx_cfg.sync_pattern[0] = 0x1;
 	tx_cfg.sync_pattern[1] = 0x2;
 	tx_cfg.sync_pattern[2] = 0x3;
+	tx_cfg.sync_pattern[3] = 0x4;
 
 	// tx_cfg.address_byte = 1;
 

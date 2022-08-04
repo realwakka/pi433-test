@@ -40,6 +40,7 @@ int main() {
         rx_cfg.sync_pattern[0] = 0x1;
         rx_cfg.sync_pattern[1] = 0x2;
         rx_cfg.sync_pattern[2] = 0x3;
+	rx_cfg.sync_pattern[3] = 0x4;
 
         ret = ioctl(fd, PI433_IOC_WR_RX_CFG, &rx_cfg);
         if (ret < 0) {
