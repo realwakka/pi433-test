@@ -9,7 +9,7 @@
 int main() {
         int fd, ret;
         char c[255];
-
+	
         fd = open("/dev/pi433.0", O_RDWR);
 
         struct pi433_rx_cfg rx_cfg;
@@ -34,7 +34,7 @@ int main() {
         rx_cfg.enable_crc = OPTION_ON;
 
         rx_cfg.sync_length = 0x3;
-        rx_cfg.fixed_message_length = 5;
+        rx_cfg.fixed_message_length = 0;
         rx_cfg.bytes_to_drop = 0;
 
         rx_cfg.sync_pattern[0] = 0x1;
@@ -49,6 +49,7 @@ int main() {
 
         ret = read(fd, c, 100);
 
+	printf("received : %s\n", c);
         if (ret < 0) {
                 printf("read failed");
 	}
